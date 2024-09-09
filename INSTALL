@@ -1,20 +1,19 @@
 This is a fairly typical autotools package. In a nutshell, if you're using
 a roughly Unix-ish environment:
 
-    0.) autoreconf -i
-        You only need this if you've fetched this package from the repo
-        and lack ./configure in the top-level source directory.
+    1.) For Ubuntu distros, you'll want to install the following dependencies:
+    sudo apt update
+    sudo apt install build-essential automake autoconf-archive \
+                 libsdl2-dev git libtool libflac-dev perl \
+                 pkgconf libutf8proc-dev
+    2.) autoreconf -i
 
-    1.) ./configure
-        Want plenty more options than you need? ./configure --help
+    3.) mkdir -p build
 
-    2.) make
-        This should create a ./schismtracker binary, which you can
-        move around to wherever it makes you happiest.
+    4.) git pull
 
-    3.) make install
-        If you want it installed! You likely want sudo for this.
+    5.) cd build && ../configure && make
 
-    4.) happy tracking!
+    6.) ./schismtracker to run and happy trackin!
 
 For more detailed instructions, peruse the files in the 'docs' directory.
